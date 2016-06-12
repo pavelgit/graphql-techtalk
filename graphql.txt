@@ -1,0 +1,99 @@
+Key features
+	Compare to REST
+	show 2 slides with data flow
+
+Show slides with snippets, in GraphQL
+
+App
+	Serverside
+	Clientside
+
+Simplest way to integrate into cube
+
+Community
+	Libraries for different envs
+	Plugins
+
+
+
+	mutations!!!
+
+
+	------------ 1 ------------
+	GraphQL 
+	- is a query language
+	- in order to solve problems of apis of Client-Server apps 
+	- it's the way how to create the query to the server and the way how 
+		the server collects the data in order to deliver it back to the client
+	- developed by Facebook
+
+
+	------------ 2... ------------
+	Let's take a look how GraphQL query may look like, and the answers
+++	- id, name - the parts of the query, the result
+++	- id, name, email - we request the email, the server gives what we request
+++	- id, name, email, friends (id) - we request the list of his friends (for example, it's a social network)
+++	- id, name, email, friends (id, name, email) - now, some of the magic we request the full data of his friends.
+	So, in GraphQL the client defined the data which id delivered, not the server.
+	It's very useful speaking of the api-s which are being used by client apps, when we request the data in order to build some view.
+
+
+	------------ 3 ------------
+	The key features:
+	- DECLARATIVE (Client-specified queries) - the client get exactly the data he requests, no more or less
+	- COMPOSITIONAL (Hierarchical) - you can define the Hierarchical structure of data to get
+	- STRONG-TYPED - you define the schema on the server side, it is strongly typed. So the client can be sure about what he get
+	- Backwards Compatible - ou can add new abilities to the api, it won't affect the results to current queries
+	- Product-centric - GraphQL is unapologetically driven by the requirements of views and the front-end engineers that write them.
+	- Application-Layer Protocol: GraphQL is an application-layer protocol and does not require a particular transport.
+	- Introspective - ou can query the schema info using GraphQL itself (the schema itself is the documentation)
+
+
+	------------ 4... ------------
+	Let's compare to rest:
+
+	- style, not protocol
+		architectural style rather than a formal protocol (debated what IS REST, what is NOT; often have to make "non-rest" decisions in order not to complicate things)
+
+	- fetch nested objects
+		require multiple round trips
+
+	- client get ALL the data
+		even not needed or added later. Can be critical both for desktop and mobile apps, can lead to "compact" and "full" endpoints (example: tariffs)
+
+	- usually weakly-typed
+		leads to questions "what does it deliver?" (enums: strings or ints?)
+
+	- The REST focus?
+		REST is intended for long-lived network-based applications that span multiple organizations. Which isn't the requiremet for the applications developed inside the same organization
+
+
+	----------------- 5 ----------------
+	Sample app
+	Clent (react), Server (express)
+	Gets data from json + somewhere
+	DELETE, POST, PUT?????????????? - mutations?
+
+		users: id, name, follows; his messages; folloewd messages; picture; + address, contacts
+		messages: id, date, user_id, text
+
+
+		views:
+			all users (just head info)
+			user with messages
+			last 10  followed messages with usernames
+			all events interfaces??
+
+			validation
+
+
+
+	----------------- 6 ----------------
+	What if it was in Cube
+	How GraphQL can be introduced on top of Cube?
+	Pros - samples, how the code would look like
+
+
+	----------------- 7 ----------------
+	Community, trending info....
+	React, Relay

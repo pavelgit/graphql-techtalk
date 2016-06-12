@@ -1,5 +1,6 @@
 import React from 'react';
 import backendApiService from './../sources/backend-api.service';
+import { Link } from 'react-router';
 
 class UsersPage extends React.Component {
 
@@ -11,17 +12,13 @@ class UsersPage extends React.Component {
   }
 
   componentWillMount() {
-    /*backendApiService.request(`{ user() { id, name } }`)
-      .then((users) => {
-        this.setState({ users });
-      });*/
+    backendApiService.request(`{ users { id, name } }`)
+      .then(response => this.setState({ users: response.data.users }));
   }
 
   renderUser(user, index) {
     return (
-      <div key={index}>
-        Name: { user.name }
-      </div>
+      <li key={index}><Link to={`/users/${user.id}`}>{ user.name }</Link></li>
     );
   }
 
@@ -29,8 +26,13 @@ class UsersPage extends React.Component {
 
     return (
       <div>
+        <div>
+          <h1>All users</h1>
+        </div>
         { this.state.users === null && 'loading users...' }
-        { this.state.users !== null && this.state.users.map((user, index) => this.renderUser(user, index)) }
+        { this.state.users !== null && (
+          <ul>{ this.state.users.map((user, index) => this.renderUser(user, index)) }</ul>
+        ) }
       </div>
     )
   }

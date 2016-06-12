@@ -5,6 +5,8 @@ import React from 'react';
 import { Router, Route, Link, browserHistory } from 'react-router'
 import App from './app.view.js';
 import UsersPage from './users.page.js';
+import UserPage from './user.page.js';
+import FeedPage from './feed.page.js';
 
 class AppComponent extends React.Component {
   render() {
@@ -12,6 +14,8 @@ class AppComponent extends React.Component {
       <Router history={browserHistory}>
         <Route path="/" component={App}>
           <Route path="users" component={UsersPage} />
+          <Route path="users/:userId" component={UserPage} />
+          <Route path="users/:userId/feed" component={FeedPage} />
         </Route>
       </Router>
     );

@@ -1,14 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <div className="row">
-          <div className="column-25">
-            Here is the sidepab
+          <div className="column column-10">
+            <div>
+              <h4>Links</h4>
+            </div>
+            <div>
+              <Link to="/users">User list</Link>
+            </div>
           </div>
-          <div className="column-75">
+          <div className="column column-10" />
+          <div className="column column-80">
             { this.props.children }
           </div>
         </div>

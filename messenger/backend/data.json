@@ -3,7 +3,7 @@
     {
       "id": "1",
       "name": "Pavel",
-      "follows": ["2", "3"],
+      "followIds": ["2", "3"],
       "address": {
         "street": "Waisenhausstr.",
         "house": "46a"
@@ -17,7 +17,7 @@
     {
       "id": "2",
       "name": "John",
-      "follows": ["3"],
+      "followIds": ["3"],
       "address": {
         "street": "Blablastr.",
         "house": "123"
@@ -31,8 +31,11 @@
     {
       "id": "3",
       "name": "William",
-      "follows": ["2"],
-      "address": null,
+      "followIds": ["2"],
+      "address": {
+        "street": "SOme street.",
+        "house": "123"
+      },
       "contacts": {}
     }
   ],
@@ -41,32 +44,32 @@
     {
       "id": "1",
       "userId": "1",
-      "date": "today",
+      "date": "10:50",
       "text": "hello everyone"
     },
     {
       "id": "2",
-      "userId": "1",
-      "date": "today",
+      "userId": "2",
+      "date": "10:55",
       "text": "I write my messages"
     },
     {
       "id": "3",
-      "userId": "1",
-      "date": "today",
+      "userId": "3",
+      "date": "11:10",
       "text": "That is how I test it!"
     },
 
     {
       "id": "4",
       "userId": "2",
-      "date": "today",
+      "date": "11:18",
       "text": "It's a new great service"
     },
     {
       "id": "5",
-      "userId": "2",
-      "date": "today",
+      "userId": "3",
+      "date": "11:30",
       "text": "Here you can read some interesting stuff: www.interesting.stuff"
     },
 
@@ -74,32 +77,32 @@
 
     {
       "id": "6",
-      "userId": "3",
-      "date": "today",
+      "userId": "2",
+      "date": "14:00",
       "text": "I like to write a lot of senseless messages"
     },
     {
       "id": "7",
       "userId": "3",
-      "date": "today",
+      "date": "14:01",
       "text": "Eating cheeseburger now"
     },
     {
       "id": "8",
-      "userId": "3",
-      "date": "today",
+      "userId": "1",
+      "date": "14:05",
       "text": "My cheeseburger has cheese inside! Wow!"
     },
     {
       "id": "9",
       "userId": "3",
-      "date": "today",
+      "date": "18:05",
       "text": "I've put my burger on the table and have taken my cola"
     },
     {
       "id": "10",
-      "userId": "3",
-      "date": "today",
+      "userId": "2",
+      "date": "18:15",
       "text": "Thank you, my followers!"
     }
 
