@@ -1,0 +1,43 @@
+https://slides.com/pavell/graphql-query/edit
+
+1. Introduction. 
+	I've prepared a short review of GraphQL
+	Will talk about key features
+	Show a sample app 
+	Show how it could be integrated in our project
+	Let's go
+
+
+2. Simple definition of GraphQL
+	it is query language
+	to be used on client-server applications, on client side
+	to fetch data from the server
+	it's developed by Facebook in order make life easier
+	don't know what it has with graphs...	
+
+
+3. Examples "social network"
+	SLIDE "First example" - Explain all the parts of the query
+	SLIDE "User" - response cintains what we've asked for
+	SLIDE "User with friend ids"- still a usual thing
+	SLIDE "User with friends data"
+
+
+4. How does it work
+	We have schema - all the types and fields (graphql is strongly-typed)
+	Server - serves the requests, uses schema and data
+	Client - makes requests, and gets exactly what it needs
+
+	Any transport - http or whatever
+	Any client, server - implementations (nodejs, java, ...)
+	Any response-format - json, xml, whatever...
+
+
+4. Now I will describe the key features of GraphQL
+	- Declarative - The client declares what the server has to return
+	- Hierarchical - you can define the Hierarchical structure of data to get
+	- STRONG-TYPED - you define the schema on the server side, it is strongly typed. So the client can be sure about what he get
+	- Backwards Compatible - ou can add new abilities to the api, it won't affect the results to current queries
+	- Product-centric - GraphQL is unapologetically driven by the requirements of views and the front-end engineers that write them.
+	- Application-Layer Protocol: GraphQL is an application-layer protocol and does not require a particular transport.
+	- Introspective - ou can query the schema info using GraphQL itself (the schema itself is the documentation)

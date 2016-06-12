@@ -8,20 +8,9 @@ function request(query) {
     .then(json => console.log(JSON.stringify(json)));
 }
 
-
 request(`
   {
-    user(id: 1) {
-      id,
-      name
-    }
-  }
-`);
-
-request(`
-  {
-    user(id: 1) {
-      id,
+    user(id: 1564) {
       name,
       email
     }
@@ -30,7 +19,7 @@ request(`
 
 request(`
   {
-    user(id: 1) {
+    user(id: 1564) {
       id,
       name,
       email,
@@ -43,7 +32,7 @@ request(`
 
 request(`
   {
-    user(id: 1) {
+    user(id: 1564) {
       id,
       name,
       email,

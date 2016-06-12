@@ -69,8 +69,8 @@ Community
 	Gets data from json + somewhere
 	DELETE, POST, PUT?????????????? - mutations?
 
-	validation
-	an example of how to add some data to view
+	change a request, show validation message
+	an example how add user messages
 
 	----------------- 6 ----------------
 	What if it was in Cube
