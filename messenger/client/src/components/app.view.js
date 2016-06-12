@@ -11,7 +11,7 @@ class App extends React.Component {
               <h4>Links</h4>
             </div>
             <div>
-              <Link to="/users">User list</Link>
+              <Link to="/">User list</Link>
             </div>
           </div>
           <div className="column column-10" />

@@ -13,12 +13,7 @@ Simplest way to integrate into cube
 Community
 	Libraries for different envs
 	Plugins
-
-
-
 	mutations!!!
-
-
 	------------ 1 ------------
 	GraphQL 
 	- is a query language
@@ -74,19 +69,8 @@ Community
 	Gets data from json + somewhere
 	DELETE, POST, PUT?????????????? - mutations?
 
-		users: id, name, follows; his messages; folloewd messages; picture; + address, contacts
-		messages: id, date, user_id, text
-
-
-		views:
-			all users (just head info)
-			user with messages
-			last 10  followed messages with usernames
-			all events interfaces??
-
-			validation
-
-
+	validation
+	an example of how to add some data to view
 
 	----------------- 6 ----------------
 	What if it was in Cube

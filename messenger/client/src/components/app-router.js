@@ -2,7 +2,7 @@ require('normalize.css/normalize.css');
 require('styles/App.less');
 
 import React from 'react';
-import { Router, Route, Link, browserHistory } from 'react-router'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import App from './app.view.js';
 import UsersPage from './users.page.js';
 import UserPage from './user.page.js';
@@ -13,7 +13,7 @@ class AppComponent extends React.Component {
     return (
       <Router history={browserHistory}>
         <Route path="/" component={App}>
-          <Route path="users" component={UsersPage} />
+          <IndexRoute component={UsersPage} />
           <Route path="users/:userId" component={UserPage} />
           <Route path="users/:userId/feed" component={FeedPage} />
         </Route>

@@ -1,6 +1,5 @@
 import React from 'react';
 import backendApiService from './../sources/backend-api.service';
-import { Link } from 'react-router';
 
 class UserPage extends React.Component {
 

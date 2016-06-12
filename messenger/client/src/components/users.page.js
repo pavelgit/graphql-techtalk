@@ -12,7 +12,7 @@ class UsersPage extends React.Component {
   }
 
   componentWillMount() {
-    backendApiService.request(`{ users { id, name } }`)
+    backendApiService.request('{ users { id, name } }')
       .then(response => this.setState({ users: response.data.users }));
   }
 
