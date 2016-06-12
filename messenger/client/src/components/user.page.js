@@ -18,7 +18,6 @@ class UserPage extends React.Component {
           id, name,
           address { street, house },
           contacts { phone, skype, email },
-          messages { text, date },
           follows { id, name }
         }
       }
@@ -32,12 +31,6 @@ class UserPage extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     this.loadData(nextProps.params);
-  }
-
-  renderMessage(message, index) {
-    return (
-      <div key={index}>&mdash; { message.text } ({ message.date })</div>
-    );
   }
 
   renderUser(user, index) {
@@ -74,13 +67,6 @@ class UserPage extends React.Component {
           </tr>
           </tbody>
         </table>
-        <div>
-          <h4>The user's messages: </h4>
-          <div>
-            { this.state.user.messages.map((message, index) => this.renderMessage(message, index))}
-          </div>
-        </div>
-        <hr/>
         <div>
           <h4>This user follows: </h4>
           <div>

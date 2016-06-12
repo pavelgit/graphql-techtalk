@@ -19,11 +19,6 @@ const userType = new graphql.GraphQLObjectType({
       description: 'The users followed by the user',
       resolve: user => dataService.getManyUsers(user.followIds)
     },
-    messages: {
-      type: new graphql.GraphQLList(messageType),
-      description: 'The messages of the user',
-      resolve: user => dataService.getUserMessages(user.id)
-    },
     feedMessages: {
       type: new graphql.GraphQLList(messageType),
       resolve: user => dataService.getManyMessages(user.followIds)
