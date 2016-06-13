@@ -31,12 +31,27 @@
     {
       "id": "3",
       "name": "William",
-      "followIds": ["2"],
+      "followIds": ["2", "4"],
       "address": {
         "street": "SOme street.",
         "house": "123"
       },
       "contacts": {}
+    },
+
+    {
+      "id": "4",
+      "name": "Bob",
+      "followIds": ["2", "3", "1"],
+      "address": {
+        "street": "White house street",
+        "house": "13"
+      },
+      "contacts": {
+        "email": "bob@white-house.gov",
+        "skype": "bob_skype",
+        "phone": "+168946354654"
+      }
     }
   ],
 
@@ -73,8 +88,6 @@
       "text": "Here you can read some interesting stuff: www.interesting.stuff"
     },
 
-
-
     {
       "id": "6",
       "userId": "2",
@@ -104,7 +117,18 @@
       "userId": "2",
       "date": "18:15",
       "text": "Thank you, my followers!"
+    },
+    {
+      "id": "11",
+      "userId": "4",
+      "date": "12:21",
+      "text": "Here is my message"
+    },
+    {
+      "id": "12",
+      "userId": "4",
+      "date": "13:22",
+      "text": "I live in a great city!"
     }
-
   ]
 }

@@ -48,7 +48,7 @@ class UserPage extends React.Component {
 
     return (
       <div>
-        <h4>The user { this.state.user.name } reads: </h4>
+        <h4>{ this.state.user.name } reads: </h4>
         <div>{ this.state.user.feedMessages.map((message, index) => this.renderMessage(message, index)) }</div>
       </div>
     )

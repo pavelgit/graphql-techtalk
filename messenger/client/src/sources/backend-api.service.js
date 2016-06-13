@@ -1,13 +1,8 @@
 const fetch = require('node-fetch');
 
 class BackendApiService {
-
-  constructor() {
-    this.serverEndpoint = 'http://localhost:3000/graphql';
-  }
-
   _buildUrl(query) {
-    return `${this.serverEndpoint}?query=${encodeURIComponent(query)}`;
+    return `http://localhost:5001/graphql?query=${encodeURIComponent(query)}`;
   }
 
   request(query) {
