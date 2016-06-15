@@ -1,6 +1,7 @@
 import React from 'react';
 import backendApiService from './../sources/backend-api.service';
 import { Link } from 'react-router';
+import Interpolate from './../sources/interpolate';
 
 class UserPage extends React.Component {
 
@@ -12,9 +13,9 @@ class UserPage extends React.Component {
   }
 
   loadData(params) {
-    backendApiService.request(`
+    backendApiService.request(Interpolate.json`
       {
-        user (id: "${params.userId}") {
+        user (id: ${String(params.userId)}) {
           id, name,
           address { street, house },
           contacts { phone, skype, email },
