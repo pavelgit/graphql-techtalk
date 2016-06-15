@@ -13,7 +13,7 @@ class UserPage extends React.Component {
   }
 
   loadData(params) {
-    backendApiService.request(Interpolate.json`
+    backendApiService.query(Interpolate.json`
       {
         user (id: ${String(params.userId)}) {
           id, name,
@@ -24,6 +24,19 @@ class UserPage extends React.Component {
       }
     `)
       .then(response => this.setState({ user: response.data.user }));
+  }
+
+  saveUser() { 
+    return backendApiService.mutation(Interpolate.json`
+      mutation {
+        updateUser(user: {id: ${this.state.user.id}, name: ${this.state.user.name}}) {
+          id, name,
+          address { street, house },
+          contacts { phone, skype, email },
+          follows { id, name }
+        }
+      }
+    `)
   }
 
   componentWillMount() {
@@ -42,6 +55,39 @@ class UserPage extends React.Component {
     );
   }
 
+  startUserEdit() {
+    this.setState({ editingUser: true });
+  }
+
+  onUserNameChange(event) {
+    this.setState({
+      user: Object.assign({}, this.state.user, 
+        { name: event.target.value })
+    })
+  }
+
+  finishUserEdit() {
+    this.setState({ editingUser: false });
+    this.saveUser().then(response => this.setState({ user: response.data.user }));
+  }
+
+  renderUserName() {
+    if (!this.state.editingUser) {
+      return (
+        <div className='UserPage-userName' 
+             onClick={() => this.startUserEdit()}>{ this.state.user.name }</div>
+      );
+    }
+
+    return (
+      <input type="text" className='UserPage-userName UserPage-userName--edit'
+        onChange={e => this.onUserNameChange(e)}
+        onBlur={() => this.finishUserEdit()}
+        value={ this.state.user.name }
+      />
+    );
+  }
+
   render() {
 
     if (!this.state.user) {
@@ -51,7 +97,7 @@ class UserPage extends React.Component {
     return (
       <div>
         <div>
-          <h3>User: { this.state.user.name }</h3>
+          <h3>User: {this.renderUserName()}</h3>
         </div>
         <table>
           <tbody>

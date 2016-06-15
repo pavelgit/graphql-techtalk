@@ -54,7 +54,7 @@
 	SLIDES "Comparison"
 
 
-8. The sample app
+8. The sample app - messenger, where people write and read short messages
 
 	is a social network
 	user list
@@ -69,6 +69,16 @@
 	- schema
 	- index.js
 
+	Frontend
+	- backend-api.service
+	- user list page
+	- user page
+	- feed page
 
 
-9. Who uses it??
+9. There is a lot of stuff
+	Who uses it??
+	Libraries for Javascript, Go, .NET, Java, Python etc...
+	Facebook's Relay framework - GraphQL+React. Some powerfull thing.
+	Graphiql - comes with express-graphql
+	

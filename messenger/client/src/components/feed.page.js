@@ -12,7 +12,7 @@ class UserPage extends React.Component {
   }
 
   loadData(params) {
-    backendApiService.request(Interpolate.json`
+    backendApiService.query(Interpolate.json`
       {
         user (id: ${String(params.userId)}) {
           name,
