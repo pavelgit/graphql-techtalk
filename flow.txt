@@ -69,6 +69,13 @@
 	- schema
 	- index.js
 
+	Frontend
+
+	Graphiql
 
 
-9. Who uses it??
+
+9. 
+
+	Other graphql features
+	Who uses it??
