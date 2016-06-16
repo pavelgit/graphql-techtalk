@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 class App extends React.Component {
   render() {
     return (
-      <div className="container">
+      <div className="container Page">
         <div className="row">
           <div className="column column-10">
             <div>

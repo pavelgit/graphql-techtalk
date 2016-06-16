@@ -1,14 +1,31 @@
 const fetch = require('node-fetch');
 
 class BackendApiService {
-  _buildUrl(query) {
-    return `http://localhost:5001/graphql?query=${encodeURIComponent(query)}`;
+  constructor() {
+    this.endpoint = 'http://localhost:5001/graphql';
   }
 
-  request(query) {
-    return fetch(this._buildUrl(query))
+  _buildUrl(query, variables) {
+    return `${this.endpoint}?query=${encodeURIComponent(query)}&`+
+      `variables=${encodeURIComponent(JSON.stringify(variables))}`;
+  }
+
+  query(query, variables = {}) {
+    return fetch(this._buildUrl(query, variables))
       .then(response => response.json());
   }
+
+  mutation(query, variables = {}) {
+    return fetch(this.endpoint, {
+      method: 'POST',
+      body: JSON.stringify({ query, variables }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json());
+  }
+
 }
 
 export default new BackendApiService();

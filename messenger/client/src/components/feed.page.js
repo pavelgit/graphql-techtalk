@@ -1,6 +1,5 @@
 import React from 'react';
 import backendApiService from './../sources/backend-api.service';
-import Interpolate from './../sources/interpolate';
 
 class UserPage extends React.Component {
 
@@ -12,9 +11,9 @@ class UserPage extends React.Component {
   }
 
   loadData(params) {
-    backendApiService.request(Interpolate.json`
-      {
-        user (id: ${String(params.userId)}) {
+    backendApiService.query(`
+      query ($id: String!){
+        user (id: $id) {
           name,
           feedMessages {
             user { name },
@@ -23,7 +22,7 @@ class UserPage extends React.Component {
           }
         }
       }
-    `)
+    `, { id: params.userId })
       .then(response => this.setState({ user: response.data.user }));
   }
 
