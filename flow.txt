@@ -64,11 +64,15 @@
 
 	Backend
 	- data.json - users, follows, contacts, messages
-	- user address type, user contacts type
-	- user type, message type
-	- query
+	- data service
+	
 	- schema
+	- message type
+	- user type (address, contacts)
+	- query
 	- index.js
+
+	Graphiql
 
 	Frontend
 	- backend-api.service
@@ -76,20 +80,7 @@
 	- user page
 	- feed page
 
+	show: feed page, add author
 
-	show: add a message to read
-
-	Graphiql
-
-
-	invent some complext, relational mutation?
 
 9. There is a lot of stuff
-	Who uses it??
-	Other graphql features
-	Libraries for Javascript, Go, .NET, Java, Python etc...
-	Facebook's Relay framework - GraphQL+React. Some powerfull thing.
-	
-
-
-remove messages from app!!!

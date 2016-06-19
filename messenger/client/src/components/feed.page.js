@@ -15,11 +15,7 @@ class UserPage extends React.Component {
       query ($id: String!){
         user (id: $id) {
           name,
-          feedMessages {
-            user { name },
-            text,
-            date
-          }
+          feedMessages { text, date }
         }
       }
     `, { id: params.userId })
@@ -36,7 +32,7 @@ class UserPage extends React.Component {
 
   renderMessage(message, index) {
     return (
-      <div key={index}>{ message.user.name } says: { message.text } ({ message.date })</div>
+      <div key={index}>{ message.text } ({ message.date })</div>
     );
   }
 
