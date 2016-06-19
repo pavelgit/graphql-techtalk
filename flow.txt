@@ -59,11 +59,6 @@
 
 8. The sample app - messenger, where people write and read short messages
 
-	is a "messenging social network"
-	has user list
-	has user page - data, follows
-	has user feed - what he reads
-
 	Backend
 	- data.json - users, follows, contacts, messages
 	- data service
@@ -77,6 +72,10 @@
 	Graphiql
 
 	Frontend
+		has user list
+		has user page - data, follows
+		has user feed - what he reads
+			
 	- backend-api.service
 	- user list page
 	- user page

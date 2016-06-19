@@ -12,18 +12,16 @@ class UserPage extends React.Component {
     }
   }
 
-  loadData(params) {
+  loadData(userId) {
     backendApiService.query(`
       query ($id: String!){
         user (id: $id) {
           id, name,
-          address { street, house },
-          contacts { phone, skype, email },
           follows { id, name },
           messages { id, text }
         }
       }
-    `, { id: params.userId })
+    `, { id: userId })
       .then(response => this.setState({ user: response.data.user }));
   }
 
@@ -37,8 +35,6 @@ class UserPage extends React.Component {
       mutation($user: UserInput) {
         updateUser(user: $user) {
           id, name,
-          address { street, house },
-          contacts { phone, skype, email },
           follows { id, name },
           messages { id, text }
         }
@@ -47,11 +43,11 @@ class UserPage extends React.Component {
   }
 
   componentWillMount() {
-    this.loadData(this.props.params);
+    this.loadData(this.props.params.userId);
   }
 
   componentWillReceiveProps(nextProps) {
-    this.loadData(nextProps.params);
+    this.loadData(nextProps.params.userId);
   }
 
   renderUser(user, index) {
@@ -123,7 +119,7 @@ class UserPage extends React.Component {
     if (this.state.editingMessage !== message.id) {
       return (
         <div key={index} className="UserPage-message">
-          <div key={index}>{ message.text }</div>
+          <div key={index}>&mdash; { message.text }</div>
           <a href="#" onClick={ () => this.startEditMessage(message) }>edit</a>
         </div>
       );
@@ -149,23 +145,8 @@ class UserPage extends React.Component {
         <div>
           <h3>User: {this.renderUserName()}</h3>
         </div>
-        <table>
-          <tbody>
-          <tr>
-            <th>Address: </th><td>{ this.state.user.address.street }, { this.state.user.address.house }</td>
-          </tr>
-          <tr>
-            <th>Contacts: </th>
-            <td>
-              <div>Phone: { this.state.user.contacts.phone }</div>
-              <div>Skype: { this.state.user.contacts.skype }</div>
-              <div>Email: { this.state.user.contacts.email }</div>
-            </td>
-          </tr>
-          </tbody>
-        </table>
         <div>
-          <h4>User's messages: </h4>
+          <h4>This user writes: </h4>
           <div>
             { this.state.user.messages.map((message, index) => this.renderMessage(message, index)) }
           </div>

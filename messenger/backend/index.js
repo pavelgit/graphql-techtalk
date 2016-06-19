@@ -1,4 +1,4 @@
-const graphqlHTTP = require('express-graphql');
+const expressGraphql = require('express-graphql');
 const express = require('express');
 const schema = require('./schema/schema');
 const cors = require('cors');
@@ -8,7 +8,11 @@ express()
     origin: 'http://localhost:8000',
     credentials: true
   }))
-  .use('/graphql', graphqlHTTP({ schema, pretty: true, graphiql: true }))
+  .use('/graphql', expressGraphql({
+    schema,
+    pretty: true,
+    graphiql: true
+  }))
   .listen(5000);
 
 console.log('GraphQL server running on http://localhost:5000/graphql');

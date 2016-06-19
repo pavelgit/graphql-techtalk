@@ -16,14 +16,7 @@ class UsersPage extends React.Component {
       .then(response => this.setState({ users: response.data.users }));
   }
 
-  renderUser(user, index) {
-    return (
-      <li key={index}><Link to={`/users/${user.id}`}>{ user.name }</Link></li>
-    );
-  }
-
   render() {
-
     return (
       <div>
         <div>
@@ -31,7 +24,13 @@ class UsersPage extends React.Component {
         </div>
         { this.state.users === null && 'loading users...' }
         { this.state.users !== null && (
-          <ul>{ this.state.users.map((user, index) => this.renderUser(user, index)) }</ul>
+          <ul>
+            {this.state.users.map((user, index) => (
+              <li key={index}>
+                <Link to={`/users/${user.id}`}>{ user.name }</Link>
+              </li>
+            ))}
+          </ul>
         ) }
       </div>
     )

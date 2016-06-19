@@ -10,7 +10,7 @@ class UserPage extends React.Component {
     }
   }
 
-  loadData(params) {
+  loadData(userId) {
     backendApiService.query(`
       query ($id: String!){
         user (id: $id) {
@@ -18,16 +18,16 @@ class UserPage extends React.Component {
           feedMessages { text, date }
         }
       }
-    `, { id: params.userId })
+    `, { id: userId })
       .then(response => this.setState({ user: response.data.user }));
   }
 
   componentWillMount() {
-    this.loadData(this.props.params);
+    this.loadData(this.props.params.userId);
   }
 
   componentWillReceiveProps(nextProps) {
-    this.loadData(nextProps.params);
+    this.loadData(nextProps.params.userId);
   }
 
   renderMessage(message, index) {

@@ -3,58 +3,36 @@
     {
       "id": "1",
       "name": "Pavel",
-      "followIds": ["2", "3"],
-      "address": {
-        "street": "Waisenhausstr.",
-        "house": "46a"
-      },
-      "contacts": {
-        "phone": "112312313123",
-        "skype": "here_is_the_skype"
-      }
+      "followIds": [
+        "2",
+        "3"
+      ]
     },
-
     {
       "id": "2",
       "name": "John",
-      "followIds": ["3"],
-      "address": {
-        "street": "Blablastr.",
-        "house": "123"
-      },
-      "contacts": {
-        "email": "email@server.com",
-        "skype": "here_is_the_skype"
-      }
+      "followIds": [
+        "3"
+      ]
     },
-
     {
       "id": "3",
       "name": "William",
-      "followIds": ["2", "4"],
-      "address": {
-        "street": "SOme street.",
-        "house": "123"
-      },
-      "contacts": {}
+      "followIds": [
+        "2",
+        "4"
+      ]
     },
-
     {
       "id": "4",
-      "name": "Bob",
-      "followIds": ["2", "3", "1"],
-      "address": {
-        "street": "White house street",
-        "house": "13"
-      },
-      "contacts": {
-        "email": "bob@white-house.gov",
-        "skype": "bob_skype",
-        "phone": "+168946354654"
-      }
+      "name": "Bobby",
+      "followIds": [
+        "2",
+        "3",
+        "1"
+      ]
     }
   ],
-
   "messages": [
     {
       "id": "1",
@@ -74,7 +52,6 @@
       "date": "11:10",
       "text": "That is how I test it!"
     },
-
     {
       "id": "4",
       "userId": "2",
@@ -87,7 +64,6 @@
       "date": "11:30",
       "text": "Here you can read some interesting stuff: www.interesting.stuff"
     },
-
     {
       "id": "6",
       "userId": "2",
@@ -122,7 +98,7 @@
       "id": "11",
       "userId": "4",
       "date": "12:21",
-      "text": "Here is my message"
+      "text": "Here is your message"
     },
     {
       "id": "12",
