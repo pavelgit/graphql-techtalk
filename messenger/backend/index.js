@@ -9,6 +9,6 @@ express()
     credentials: true
   }))
   .use('/graphql', graphqlHTTP({ schema, pretty: true, graphiql: true }))
-  .listen(5001);
+  .listen(5000);
 
-console.log('GraphQL server running on http://localhost:5001/graphql');
+console.log('GraphQL server running on http://localhost:5000/graphql');

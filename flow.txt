@@ -1,22 +1,23 @@
 0.
-	https://slides.com/pavell/graphql-query/edit
+	http://slides.com/pavell/graphql-query
 	Open the slides
-	Run the app
+
+	nodemon index.js
+	node server.js
 
 
 1. Introduction. 
 	I've prepared a short review of GraphQL
-	Will talk about key features
-	Show a sample app 
-	Show how it could be integrated in our project
+	Will tell about key features, compare
+	Show a sample app
 	Let's go
 
 
-2. Simple definition of GraphQL
-	it is query language
-	to be used on client-server applications, on client side
-	to fetch data from the server
-	it's developed by Facebook in order make life easier
+2. What is GraphQL?
+	- query language
+	- client-server
+	- fetch data
+	- developed by Facebook
 	don't know what it has with graphs...	
 
 
@@ -27,10 +28,12 @@
 	SLIDE "User with friends data" - that's a thing!
 
 
-4. How does it work
-	We have schema - all the types and fields (graphql is strongly-typed). And "resolve" methods.
-	Server - serves the requests, uses schema and data
-	Client - makes requests, and gets exactly what it needs
+4. Explain parts
+	- Client
+	- Server with single graphql endpoint
+	- Schema - data structure : types + "Resolve" functions
+
+	SLIDE - Schema
 
 	Any transport - http or whatever
 	Any client, server - implementations (nodejs, java, ...)
@@ -44,12 +47,11 @@
 
 6. Now I will describe the key features of GraphQL
 	SLIDES - "Features"
+	...introspective
 
 
-7. Let's compare to rest:
-
-	SLIDE "GraphQL vs REST". 
-	Now mainly rest is used
+7. SLIDE "GraphQL vs REST". 
+	traditionally rest is used
 
 	SLIDE "GraphQL vs REST approach"
 	SLIDES "Comparison"

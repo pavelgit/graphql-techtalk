@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 class BackendApiService {
   constructor() {
-    this.endpoint = 'http://localhost:5001/graphql';
+    this.endpoint = 'http://localhost:5000/graphql';
   }
 
   _buildUrl(query, variables) {
