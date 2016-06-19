@@ -39,6 +39,7 @@
 
 
 5.	SLIDES - "How graphql works"
+	A few words about mutations
 
 
 6. Now I will describe the key features of GraphQL
@@ -56,10 +57,10 @@
 
 8. The sample app - messenger, where people write and read short messages
 
-	is a social network
-	user list
-	user page - data, follows
-	user feed - what he reads
+	is a "messenging social network"
+	has user list
+	has user page - data, follows
+	has user feed - what he reads
 
 	Backend
 	- data.json - users, follows, contacts, messages
@@ -75,6 +76,9 @@
 	- user page
 	- feed page
 
+
+	show: add a message to read
+
 	Graphiql
 
 
@@ -86,3 +90,6 @@
 	Libraries for Javascript, Go, .NET, Java, Python etc...
 	Facebook's Relay framework - GraphQL+React. Some powerfull thing.
 	
+
+
+remove messages from app!!!

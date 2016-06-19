@@ -7,7 +7,8 @@ class UserPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      users: null
+      users: null,
+      editingMessage: null
     }
   }
 
@@ -19,28 +20,27 @@ class UserPage extends React.Component {
           address { street, house },
           contacts { phone, skype, email },
           follows { id, name },
-          messages { text }
+          messages { id, text }
         }
       }
     `, { id: params.userId })
       .then(response => this.setState({ user: response.data.user }));
   }
 
-
-
   saveUser() {
     const userInput = {
       id: this.state.user.id,
-      name: this.state.user.name
+      name: this.state.user.name,
+      messages: this.state.user.messages
     };
     return backendApiService.mutation(`
-      mutation($user: UserInputType) {
+      mutation($user: UserInput) {
         updateUser(user: $user) {
           id, name,
           address { street, house },
           contacts { phone, skype, email },
           follows { id, name },
-          messages { text }
+          messages { id, text }
         }
       }
     `, { user: userInput });
@@ -66,7 +66,7 @@ class UserPage extends React.Component {
     this.setState({ editingUser: true });
   }
 
-  onUserNameChange(event) {
+  changeUserName(event) {
     this.setState({
       user: Object.assign({}, this.state.user,
         { name: event.target.value })
@@ -88,12 +88,55 @@ class UserPage extends React.Component {
 
     return (
       <input type="text" className='UserPage-userName UserPage-userName--edit'
-        onChange={e => this.onUserNameChange(e)}
+        onChange={e => this.changeUserName(e)}
         onBlur={() => this.finishUserEdit()}
         value={ this.state.user.name }
       />
     );
   }
+
+  /* ********************************* MESSAGES **************************************************/
+
+  startEditMessage(message) {
+    this.setState({
+      editingMessage: message.id
+    });
+  }
+
+  updateMessage(message, event) {
+    const index = this.state.user.messages.findIndex(m => m.id === message.id);
+    this.state.user.messages[index].text = event.target.value;
+    this.setState({
+      user: {
+        ...this.state.user,
+        messages: this.state.user.messages
+      }
+    });
+  }
+
+  finishEditMessage() {
+    this.setState({ editingMessage: null });
+    this.saveUser().then(response => this.setState({ user: response.data.updateUser }));
+  }
+
+  renderMessage(message, index) {
+    if (this.state.editingMessage !== message.id) {
+      return (
+        <div key={index} className="UserPage-message">
+          <div key={index}>{ message.text }</div>
+          <a href="#" onClick={ () => this.startEditMessage(message) }>edit</a>
+        </div>
+      );
+    }
+    return (
+      <div key={index} className="UserPage-message">
+        <input onChange={ e => this.updateMessage(message, e) } value={ message.text } />
+        <a href="#" onClick={ () => this.finishEditMessage() }>save</a>
+      </div>
+    );
+  }
+
+  /*************************************************************************************************/
 
   render() {
 
@@ -124,7 +167,7 @@ class UserPage extends React.Component {
         <div>
           <h4>User's messages: </h4>
           <div>
-            { this.state.user.messages.map((message, index) => <div key={index}>{ message.text }</div>)}
+            { this.state.user.messages.map((message, index) => this.renderMessage(message, index)) }
           </div>
         </div>
         <hr/>

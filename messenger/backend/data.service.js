@@ -30,13 +30,26 @@ class DataService {
     return feedMessages;
   }
 
-  updateUser(userAtributes) {
-    const originalUser = this.getUser(userAtributes.id);
+  updateMessage(messageInputObject) {
+    const originalMessage = data.messages.find(m => m.id === messageInputObject.id);
+    if (!originalMessage) {
+      throw new Error('Message not found');
+    }
+    originalMessage.text = messageInputObject.text;
+    return originalMessage;
+  }
+
+  updateUser(userInputObject) {
+    const originalUser = this.getUser(userInputObject.id);
     if (!originalUser) {
       throw new Error('User not found');
     }
-    Object.assign(originalUser, userAtributes);
-    return this._writeData().then(() => originalUser);
+    originalUser.name = userInputObject.name;
+    const saveResult = this._writeData().then(() => originalUser);
+    if (userInputObject.messages) {
+      userInputObject.messages.map(messageInputObject => this.updateMessage(messageInputObject));
+    }
+    return saveResult;
   }
 
   _writeData() {

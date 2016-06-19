@@ -18,7 +18,7 @@
     },
     {
       "id": "2",
-      "name": "Ben",
+      "name": "John",
       "followIds": [
         "3"
       ],
@@ -46,7 +46,7 @@
     },
     {
       "id": "4",
-      "name": "John",
+      "name": "Bob",
       "followIds": [
         "2",
         "3",
@@ -68,7 +68,7 @@
       "id": "1",
       "userId": "1",
       "date": "10:50",
-      "text": "hello everyone"
+      "text": "hello everyone5"
     },
     {
       "id": "2",
