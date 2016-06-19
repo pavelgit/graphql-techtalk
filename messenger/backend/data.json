@@ -3,10 +3,7 @@
     {
       "id": "1",
       "name": "Pavel",
-      "followIds": [
-        "2",
-        "3"
-      ],
+      "followIds": ["2", "3"],
       "address": {
         "street": "Waisenhausstr.",
         "house": "46a"
@@ -16,12 +13,11 @@
         "skype": "here_is_the_skype"
       }
     },
+
     {
       "id": "2",
       "name": "John",
-      "followIds": [
-        "3"
-      ],
+      "followIds": ["3"],
       "address": {
         "street": "Blablastr.",
         "house": "123"
@@ -31,27 +27,22 @@
         "skype": "here_is_the_skype"
       }
     },
+
     {
       "id": "3",
       "name": "William",
-      "followIds": [
-        "2",
-        "4"
-      ],
+      "followIds": ["2", "4"],
       "address": {
         "street": "SOme street.",
         "house": "123"
       },
       "contacts": {}
     },
+
     {
       "id": "4",
       "name": "Bob",
-      "followIds": [
-        "2",
-        "3",
-        "1"
-      ],
+      "followIds": ["2", "3", "1"],
       "address": {
         "street": "White house street",
         "house": "13"
@@ -63,12 +54,13 @@
       }
     }
   ],
+
   "messages": [
     {
       "id": "1",
       "userId": "1",
       "date": "10:50",
-      "text": "hello everyone5"
+      "text": "hello everyone"
     },
     {
       "id": "2",
@@ -82,6 +74,7 @@
       "date": "11:10",
       "text": "That is how I test it!"
     },
+
     {
       "id": "4",
       "userId": "2",
@@ -94,6 +87,7 @@
       "date": "11:30",
       "text": "Here you can read some interesting stuff: www.interesting.stuff"
     },
+
     {
       "id": "6",
       "userId": "2",
