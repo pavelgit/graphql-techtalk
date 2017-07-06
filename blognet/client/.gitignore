@@ -1,0 +1,41 @@
+node_modules/
+reports/
+uploads/
+doc/
+config/keys/
+!config/keys/key-oc-int
+
+project.lock.json
+npm-debug.json
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# nvm
+.node-version
+.npm-version
+
+# Editors
+.vs/
+
+build
+.next
+Session.vim
+.idea
+jest.json
+coverage/
+mocha.json

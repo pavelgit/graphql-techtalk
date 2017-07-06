@@ -1,0 +1,13 @@
+{
+  "name": "blognet-client",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "next"
+  },
+  "dependencies": {
+    "next": "2.4.4",
+    "paint-console": "0.0.1",
+    "react": "15.6.1",
+    "react-dom": "15.6.1"
+  }
+}

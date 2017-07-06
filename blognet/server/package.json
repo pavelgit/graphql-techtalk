@@ -1,0 +1,20 @@
+{
+  "name": "blognet-server",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "nodemon --inspect ./server.js"
+  },
+  "dependencies": {
+    "graphql": "^0.10.3",
+    "koa": "2.2.0",
+    "koa-bodyparser": "4.2.0",
+    "koa-cors": "^0.0.16",
+    "koa-graphql": "^0.7.1",
+    "koa-mount": "^3.0.0",
+    "koa-router": "7.2.1",
+    "paint-console": "0.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "1.11.0"
+  }
+}
