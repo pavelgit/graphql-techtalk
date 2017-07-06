@@ -28,74 +28,74 @@
   "messages": [
     {
       "id": "1",
-      "userId": "1",
+      "authorId": "1",
       "date": "10:50",
       "text": "hello everyone"
     },
     {
       "id": "2",
-      "userId": "2",
+      "authorId": "2",
       "date": "10:55",
       "text": "I write my messages"
     },
     {
       "id": "3",
-      "userId": "3",
+      "authorId": "3",
       "date": "11:10",
       "text": "That is how I test it!"
     },
 
     {
       "id": "4",
-      "userId": "2",
+      "authorId": "2",
       "date": "11:18",
       "text": "It's a new great service"
     },
     {
       "id": "5",
-      "userId": "3",
+      "authorId": "3",
       "date": "11:30",
       "text": "Here you can read some interesting stuff: www.interesting.stuff"
     },
     {
       "id": "6",
-      "userId": "2",
+      "authorId": "2",
       "date": "14:00",
       "text": "I like to write a lot of senseless messages"
     },
     {
       "id": "7",
-      "userId": "3",
+      "authorId": "3",
       "date": "14:01",
       "text": "Eating cheeseburger now"
     },
     {
       "id": "8",
-      "userId": "1",
+      "authorId": "1",
       "date": "14:05",
       "text": "My cheeseburger has cheese inside! Wow!"
     },
     {
       "id": "9",
-      "userId": "3",
+      "authorId": "3",
       "date": "18:05",
       "text": "I've put my burger on the table and have taken my cola"
     },
     {
       "id": "10",
-      "userId": "2",
+      "authorId": "2",
       "date": "18:15",
       "text": "Thank you, my followers!"
     },
     {
       "id": "11",
-      "userId": "4",
+      "authorId": "4",
       "date": "12:21",
       "text": "Here is my message"
     },
     {
       "id": "12",
-      "userId": "4",
+      "authorId": "4",
       "date": "13:22",
       "text": "I live in a great city!"
     }

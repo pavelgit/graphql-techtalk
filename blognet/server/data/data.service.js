@@ -18,7 +18,7 @@ class DataService {
   }
 
   getUserMessages(userId) {
-    return data.messages.filter(message => parseInt(message.userId) === parseInt(userId));
+    return data.messages.filter(message => parseInt(message.authorId) === parseInt(userId));
   }
 
   getMultipleUsersMessages(userIds) {

@@ -11,6 +11,7 @@ export default class Layout extends React.Component {
           <meta charSet='utf-8' />
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="stylesheet" href="/static/milligram.css"></link>
+          <link rel="stylesheet" href="/static/styles.css"></link>
         </Head>
         <div className="container Page">
           <div className="row">

@@ -1,0 +1,23 @@
+.Page {
+  margin-top: 30px;
+}
+
+div.UserPage-userName, input.UserPage-userName {
+  border: 2px gray dashed;
+  display: inline;
+  width: auto;
+}
+
+.UserPage-message {
+  display: flex;
+}
+
+.UserPage-message a {
+  margin-left: 10px;
+}
+
+.UserPage-message input {
+  margin-bottom: 0;
+  padding: 5px;
+  width: 300px;
+}

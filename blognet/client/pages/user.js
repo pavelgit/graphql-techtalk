@@ -131,14 +131,14 @@ export default class UserPage extends React.Component {
     if (this.state.editingMessage !== message.id) {
       return (
         <div key={index} className="UserPage-message">
-          <div key={index}>&mdash; { message.text }</div>
+          <div key={index}>&mdash; { message.text }</div> &nbsp;
           <a href="#" onClick={ () => this.startEditMessage(message) }>edit</a>
         </div>
       );
     }
     return (
       <div key={index} className="UserPage-message">
-        <input onChange={ e => this.updateMessage(message, e) } value={ message.text } />
+        &mdash;&nbsp; <input onChange={ e => this.updateMessage(message, e) } value={ message.text } /> &nbsp;
         <a href="#" onClick={ () => this.finishEditMessage() }>save</a>
       </div>
     );
